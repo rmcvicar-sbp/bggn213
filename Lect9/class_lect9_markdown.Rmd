@@ -2,9 +2,9 @@
 title: "class_lect9_Machine Learning pt.1"
 author: "Rachael McVicar"
 date: "2/5/2020"
-output: html_document
+output: github_document
 ---
-
+##changed to github_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
