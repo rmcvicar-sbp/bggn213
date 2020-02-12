@@ -1,0 +1,159 @@
+---
+title: "class_lect9_Machine Learning pt.1"
+author: "Rachael McVicar"
+date: "2/5/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##K-means clustering
+
+Let's try the `kmeans()`function in R to cluster some made-up example data.
+
+```{r}
+tmp <- c(rnorm(30,-3), rnorm(30,3))
+x <- cbind(x=tmp, y=rev(tmp))
+plot(x)
+```
+
+Use the kmeans()function setting k to 2 and nstart=20
+```{r}
+km <- kmeans(x, centers=2, nstart = 20)
+km
+```
+
+What is in the output object `km`
+I can use the `attributes()` functiond to find this ratio :-)
+
+```{r}
+attributes(km)
+```
+
+
+Q. How many points are in each cluster?
+```{r}
+km$size
+```
+
+Q. What ‘component’ of your result object details
+ - cluster size?
+ - cluster assignment/membership?
+```{r}
+km$cluster
+```
+let's check how many 2's and 1's are in this vector with the `table()` function.
+```{r}
+table(km$cluster)
+```
+
+
+Q. What ‘component’ of your result object details
+ - cluster center?
+```{r}
+km$centers
+```
+ 
+ Plot x colored by thekmeans cluster assignment and add cluster assignment and add cluster centers as blue points
+ 
+```{r}
+plot(x, col=km$cluster)
+points(km$centers, col="blue", pch=15)
+```
+ 
+ 
+ ##Hierarchial clustering in r
+ 
+ The `hclust()` function is the main Hierarchial clustering methods in R and it **must** be passed in a *distance matrix* as input, not your raw data!
+ 
+```{r}
+hc<- hclust( dist(x))
+hc
+```
+ 
+```{r}
+plot(hc)
+abline(h=6, col="red", lty=2)
+```
+ 
+```{r}
+cutree(hc, h=6)
+table(cutree(hc, h=3.5))
+
+```
+ 
+ You can also ask `cutree()` for the `k` number of groups that you want
+```{r}
+cutree(hc, k=5)
+```
+ 
+## Some more messy data to cluster
+```{r}
+ x <- rbind(
+ matrix(rnorm(100, mean=0, sd=0.3), ncol = 2), # c1
+ matrix(rnorm(100, mean=1, sd=0.3), ncol = 2), # c2
+ matrix(c(rnorm(50, mean=1, sd=0.3), # c3
+ rnorm(50, mean=0, sd=0.3)), ncol = 2))
+colnames(x) <- c("x", "y")
+plot(x)
+col <- as.factor( rep(c("c1","c2","c3"), each=50) )
+plot(x, col=col)
+```
+ 
+ Q. Use the dist(), hclust(), plot() and cutree()
+ functions to return 2 and 3 clusters
+Q. How does this compare to your known 'col' groups?
+
+
+```{r}
+hc <- hclust(dist(x))
+plot(hc)
+```
+
+```{r}
+grps <- cutree(hc, k=3)
+grps
+table(grps)
+```
+
+```{r}
+plot(x, col=grps)
+```
+
+```{r}
+table(grps, col)
+```
+
+###Hands on with Principal Component Analysis (PCA)
+The main function in base R for PCA is called `prcomp()`. Here we will use PCA to examine the funny food that folk eat in the UK and N. Ireland.
+
+Import the CSV file first:
+```{r}
+x <- read.csv("UK_foods.csv", row.names = 1)
+x
+```
+
+```{r}
+barplot(as.matrix(x), beside=T, col=rainbow(nrow(x)))
+```
+
+luxury to do this plot in the biology world
+```{r}
+pairs(x, col=rainbow(10), pch=16)
+```
+
+```{r}
+pca <- prcomp( t(x) )
+```
+
+```{r}
+summary(pca)
+```
+
+```{r}
+plot( pca$x[,1], pca$x[,2])
+text(pca$x[,1], pca$x[,2], colnames(x),col=c("black", "red", "blue", "green"))
+```
+

@@ -1,0 +1,22 @@
+---
+title: 'Class10: Machine Learning project'
+author: "Rachael McVicar"
+date: "2/7/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Get our input data
+
+Our data for today come from the Wisconsin Breast Cancer Diagnostic Data Set
+
+
+```{r}
+wisc.data<- read.csv("WisconsinCancer.csv")
+head(wisc.data)
+hclust(wisc.data, )
+```
+
