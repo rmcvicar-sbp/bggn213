@@ -3,10 +3,9 @@ title: 'Class10: MacineLearningProject_take2'
 author: "Rachael McVicar"
 date: "2/7/2020"
 output:
-  pdf_document: default
-  html_document: default
+  github_document
 ---
-
+##changed to github_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
