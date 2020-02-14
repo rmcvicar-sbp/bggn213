@@ -3,6 +3,8 @@ Class10: MacineLearningProject\_take2
 Rachael McVicar
 2/7/2020
 
+\#\#changed to github\_document
+
 ## Get our input data
 
 Our data for today come from the Wisconsin Breast Cancer Diagnostic Data
