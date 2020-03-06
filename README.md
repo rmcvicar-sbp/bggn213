@@ -8,7 +8,7 @@ This is my classwork from [BGGN213 Winter quarter 2020](https://bioboot.github.i
 - Class 7: 
 - Class 8: [Bioinformatics R packages from CRAN and BioConductor]
 - Class 9: [Machine Learning] (https://github.com/rmcvicar-sbp/bggn213/blob/master/Lect9/class_lect9_markdown.md)
-- Class 10:[Unsupervised learning mini-project]
+- Class 10:[Unsupervised learning mini-project] (https://github.com/rmcvicar-sbp/bggn213/blob/master/Lect10/class10.md)
 - Class 11:[Find a Gene Assignment] 
 - Class 12:[Structural Bioinformatics]
 - Class 13:[Bioinformatics in Drug Discovery and Design]
