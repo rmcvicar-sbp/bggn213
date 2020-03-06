@@ -5,4 +5,6 @@ This is my classwork from [BGGN213 Winter quarter 2020](https://bioboot.github.i
 - Class 4: Introduction to R
 - Class 5: R Graphics
 - Class 6:
--Class 9: [Machine Learning] (https://github.com/rmcvicar-sbp/bggn213/blob/master/Lect9/class_lect9_markdown.md)
+- Class 7: 
+- Class 8:
+- Class 9: [Machine Learning] (https://github.com/rmcvicar-sbp/bggn213/blob/master/Lect9/class_lect9_markdown.md)
