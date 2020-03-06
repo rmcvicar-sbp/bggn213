@@ -1,0 +1,158 @@
+---
+title: "CoronaVirus HW take 2"
+output: github_document
+---
+
+---
+title: "coronavirus"
+author: "Rachael McVicar"
+date: "3/4/2020"
+output: gitub_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Coronavirus
+
+Here we analyze infection data for the 2019 novel Coronavirus COVID-19 (2019-nCoV) epidemic. The raw data is pulled from the Johns Hopkins University Center for Systems Science and Engineering (JHU CCSE) Coronavirus repository.
+
+A CSV file is available here https://github.com/RamiKrispin/coronavirus-csv
+
+
+```{r}
+url <- "https://tinyurl.com/COVID-2019"
+virus <- read.csv(url)
+
+tail(virus)
+```
+6 rows and 7 columns
+
+> Q1. How mant total infected cases are there around the world?
+
+```{r}
+total_cases<- sum(virus$cases)
+total_cases
+```
+155,031 cases around the world as of 3/6/2020 11:30pm
+
+
+
+> Q2. How many deaths linked to infected cases have there been?
+
+Let's have a look at the *$type* column
+
+```{r}
+inds<- virus$type == "death"
+death_cases<- sum(virus[inds, "cases"])
+death_cases
+```
+3,348 deaths linked to total cases as of 3/6/2020 11:30pm
+
+
+> Q3. What is the overall death rate?
+
+percent death is...
+```{r}
+round(death_cases/total_cases * 100, 2)
+```
+2.16% of total COVID19 cases result in death
+
+
+
+> Q4. What is the death rate in "Mainland China"?
+
+
+```{r}
+table.China.cases<- subset(virus, Country.Region == "Mainland China", select = TRUE)
+total.China.cases<- sum(table.China.cases$cases)
+```
+cases: 135,675
+
+
+```{r}
+table.China.deaths<- subset(table.China.cases, type=="death", select= TRUE) 
+total.China.deaths<- sum(table.China.deaths$cases)
+```
+deaths: 3,013
+
+
+and for the moment of truth!
+```{r}
+round(total.China.deaths/total.China.cases * 100, 2)
+```
+2.22% death rate in China. It's horrible news, but figured the code out!
+
+
+
+> Q5. What is the death rate in Italy, Iran, and the US?
+> 5A) ITALY
+
+```{r}
+table.Italy.cases<- subset(virus, Country.Region == "Italy", select = TRUE)
+sum(table.Italy.cases$cases)
+total.Italy.cases<- sum(table.Italy.cases$cases)
+```
+cases: 4,420
+
+
+```{r}
+table.Italy.deaths<- subset(table.Italy.cases, type=="death", select= TRUE) 
+sum(table.Italy.deaths$cases)
+total.Italy.deaths<- sum(table.Italy.deaths$cases)
+```
+deaths: 148
+
+
+```{r}
+round(total.Italy.deaths/total.Italy.cases * 100, 2)
+```
+3.35% death rate in Italy
+
+> 5B) IRAN
+
+```{r}
+table.Iran.cases<- subset(virus, Country.Region == "Iran", select = TRUE)
+sum(table.Iran.cases$cases)
+total.Iran.cases<- sum(table.Iran.cases$cases)
+```
+cases: 4,359
+
+
+```{r}
+table.Iran.deaths<- subset(table.Iran.cases, type=="death", select= TRUE) 
+sum(table.Iran.deaths$cases)
+total.Iran.deaths<- sum(table.Iran.deaths$cases)
+```
+deaths: 107
+
+
+```{r}
+round(total.Iran.deaths/total.Iran.cases * 100, 2)
+```
+2.45% death rate in Iran
+
+> 5C) US
+
+```{r}
+table.US.cases<- subset(virus, Country.Region == "US", select = TRUE)
+sum(table.US.cases$cases)
+total.US.cases<- sum(table.US.cases$cases)
+```
+cases: 241
+
+
+```{r}
+table.US.deaths<- subset(table.US.cases, type=="death", select= TRUE) 
+sum(table.US.deaths$cases)
+total.US.deaths<- sum(table.US.deaths$cases)
+```
+deaths: 12
+
+
+```{r}
+round(total.US.deaths/total.US.cases * 100, 2)
+```
+4.98% death rate in US
+
