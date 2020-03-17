@@ -14,6 +14,7 @@ output: gitub_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+#just push it, salt and pepper status
 ## Coronavirus
 
 Here we analyze infection data for the 2019 novel Coronavirus COVID-19 (2019-nCoV) epidemic. The raw data is pulled from the Johns Hopkins University Center for Systems Science and Engineering (JHU CCSE) Coronavirus repository.
