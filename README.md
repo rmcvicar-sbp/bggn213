@@ -5,7 +5,7 @@ This is my classwork from [BGGN213 Winter quarter 2020](https://bioboot.github.i
 
 - Class 6:  [Writing R Functions](Lect6/Lecture06.md)
 - Class 7:  Guest Speaker
-- Class 8:  [Bioinformatics R packages from CRAN and BioConductor]()
+- Class 8:  Bioinformatics R packages from CRAN and BioConductor
 - Class 9:  [Machine Learning](Lect9/class_lect9_markdown.md)
 - Class 10: [Unsupervised learning mini-project](Lect10/class10.md) 
 - Class 11: Find a Gene Assignment
