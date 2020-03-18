@@ -1,0 +1,56 @@
+---
+title: "Structure based drug design"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 
+
+Me: First, when we import the protein structure from PDB (it will be bound to a compound), we want to separate the protein structure from that molecule.
+
+Barry: Here we download and clean up the HIV-Pr structure(PDB: 1HSG) from PDB. 
+Make a separate set of "protein only" and "ligand only" files.
+
+```{r}
+library(bio3d)
+file.name<- get.pdb("1HSG")
+file.name
+```
+
+We'll use `read.pdb`, `atom.select()`, and write `write.pdb()` functions to make our separate "protein only" and "ligand only" file
+```{r}
+read.pdb("1HSG")
+hiv<- read.pdb(file.name)
+?atom.select
+```
+
+```{r}
+hiv.protein.only<- atom.select(hiv, "protein", value=TRUE)
+hiv.ligand.only<- atom.select(hiv, "ligand", value=TRUE)
+```
+
+```{r}
+?write.pdb
+write.pdb(hiv.protein.only, file="1HSG_protein.pdb")
+write.pdb(hiv.ligand.only, file="1HSG_ligand.pdb")
+```
+
+The next step is to use AutoDockTools to setup protein docking input
+Need hydrogens to calculate energies when docking, done through "AutoDockTools"
+charge and atom-type is the difference between .pdbqt vs .pdb files (charge & type)
+
+```{r}
+
+res <- read.pdb("all.pdbqt", multi=TRUE)
+write.pdb(res, "results.pdb")
+```
+
+```{r}
+library(bio3d)
+res <- read.pdb("all.pdbqt", multi= TRUE)
+write.pdb(res, "results.pdb")
+```
+
