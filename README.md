@@ -9,7 +9,7 @@ This is my classwork from [BGGN213 Winter quarter 2020](https://bioboot.github.i
 - Class 9:  [Machine Learning](Lect9/class_lect9_markdown.md)
 - Class 10: [Unsupervised learning mini-project](https://github.com/rmcvicar-sbp/bggn213/blob/master/Lect10/class10.md)
 - Class 11: [Find a Gene Assignment](Lect10/class10.md) 
-- Class 12: [Structural Bioinformatics]()
+- Class 12: [Structural Bioinformatics](Lect12_project/Lect12.md)
 - Class 13: [Bioinformatics in Drug Discovery and Design]()
 - Class 14: [Genome Informatics and High Throughput Sequencing]()
 - Class 15: [Transcriptomics and the Analysis of RNA-Seq Data]()
