@@ -13,5 +13,5 @@ This is my classwork from [BGGN213 Winter quarter 2020](https://bioboot.github.i
 - Class 13: [Bioinformatics in Drug Discovery and Design](Lect13/Lect13.md)
 - Class 14: Genome Informatics and High Throughput Sequencing______absent.SBPgrad-interviewday
 - Class 15: [Transcriptomics and the Analysis of RNA-Seq Data](Lect15/Lect15-markdown.md)
-- Class 16: [Genome Annotation and the Interpretation of Gene Lists]()
+- Class 16: [Genome Annotation and the Interpretation of Gene Lists](Lect16/Class16.md)
 - Class 17: [Biological Network Analysis]()
