@@ -5,9 +5,9 @@ This is my classwork from [BGGN213 Winter quarter 2020](https://bioboot.github.i
 - Class 4:  [Introduction to R]()
 - Class 5:  [R Graphics]()
 - Class 6:  [Writing R Functions](Lect6/Lecture06.md)
-- Class 7: 
+- Class 7:  
 - Class 8:  [Bioinformatics R packages from CRAN and BioConductor]()
-- Class 9:  [Machine Learning](https://github.com/rmcvicar-sbp/bggn213/blob/master/Lect9/class_lect9_markdown.md)
+- Class 9:  [Machine Learning](Lect9/class_lect9_markdown.md)
 - Class 10: [Unsupervised learning mini-project](https://github.com/rmcvicar-sbp/bggn213/blob/master/Lect10/class10.md)
 - Class 11: [Find a Gene Assignment]() 
 - Class 12: [Structural Bioinformatics]()
